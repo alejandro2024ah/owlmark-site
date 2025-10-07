@@ -774,3 +774,33 @@ main {
 .hero .hero-overlay {
   display: none !important;
 }
+/* --- FORCE HERO BACKGROUND --- */
+.hero {
+  background-image: url("./assets/hero.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important; /* avoids odd fixed-cover issues */
+}
+
+/* Hide the old <img> and the purple overlay, no component edits needed */
+.hero .hero-bg,
+.hero .hero-overlay {
+  display: none !important;
+  filter: none !important;
+}
+/* === FORCE HERO BACKGROUND FROM src/assets === */
+.hero {
+  background-image: url("./assets/hero.jpg") !important; /* change to hero.png if that's your file */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+/* Hide the old <img> and purple overlay that can cover your image */
+.hero .hero-bg,
+.hero .hero-overlay {
+  display: none !important;
+  filter: none !important;
+}
