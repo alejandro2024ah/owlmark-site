@@ -1,31 +1,49 @@
 import React from "react";
-import logo from "../assets/logo.svg";
 
-const heroBg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80";
+const pillars = [
+  {
+    title: "Human-first strategy",
+    description:
+      "Work directly with senior strategists who translate your business goals into bold marketing roadmaps that resonate with real people.",
+    icon: "🤝"
+  },
+  {
+    title: "Cinematic storytelling",
+    description:
+      "From launch films to always-on content, we craft immersive narratives that turn curious scrollers into loyal advocates.",
+    icon: "🎬"
+  },
+  {
+    title: "Full-funnel performance",
+    description:
+      "Measure what matters. Every campaign is optimized in real time with experimentation, analytics, and clear outcomes.",
+    icon: "📊"
+  }
+];
 
-export default function Hero() {
+export default function About() {
   return (
-    <section id="top" className="hero" aria-labelledby="hero-title">
-      <div className="hero-bg-wrapper">
-        <img 
-          src={heroBg} 
-          alt="Beautiful mountain landscape representing growth and success" 
-          className="hero-bg" 
-          loading="eager" 
-          fetchpriority="high" 
-        />
-        <div className="hero-overlay"></div>
-      </div>
+    <section id="about" className="section about" aria-labelledby="about-title">
+      <div className="container about-layout">
+        <div className="about-intro">
+          <span className="eyebrow">About OWLmΔrk</span>
+          <h2 id="about-title">A creative performance studio for ambitious teams</h2>
+          <p>
+            OWLmΔrk is a hybrid marketing collective built for brands that refuse to settle. We merge deep research, design thinking, and agile media buying so you can move from idea to impact faster than ever.
+          </p>
+          <p className="about-highlight">
+            Whether you need a full product launch, a campaign refresh, or a dedicated growth partner, we’re here to help you find your signal and amplify it.
+          </p>
+        </div>
 
-      <div className="hero-content">
-        <img src={logo} alt="OWLmΔrk brand symbol" className="hero-logo" />
-        <h1 id="hero-title" className="hero-title">OWLmΔrk</h1>
-        <p className="hero-subtitle">
-          Elevate your brand with strategic marketing solutions that drive real results
-        </p>
-        <div className="hero-actions">
-          <a href="#contact" className="cta">Get Started</a>
-          <a href="#services" className="cta cta--secondary">Our Services</a>
+        <div className="about-pillars">
+          {pillars.map((pillar) => (
+            <article className="about-card" key={pillar.title}>
+              <span className="about-card-icon" aria-hidden="true">{pillar.icon}</span>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
