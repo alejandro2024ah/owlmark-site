@@ -1,0 +1,317 @@
+/* AnimatedLogo.css - Animations for the video-like logo */
+
+.animated-logo-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: logoEntrance 1.5s ease-out;
+}
+
+.animated-logo {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(102, 126, 234, 0.3));
+}
+
+/* Logo entrance animation */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Glow circle animation */
+.logo-glow {
+  animation: pulse 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Rotating ring */
+.logo-ring {
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Owl body breathing effect */
+.owl-body {
+  animation: breathe 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Eye blinking animation */
+.owl-eyes {
+  animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 48%, 52%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* Pupils following motion */
+.eye-pupil {
+  animation: lookAround 6s ease-in-out infinite;
+}
+
+@keyframes lookAround {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2px, -1px);
+  }
+  50% {
+    transform: translate(-2px, 1px);
+  }
+  75% {
+    transform: translate(1px, -2px);
+  }
+}
+
+/* Wing flapping */
+.owl-wing-left {
+  animation: flapLeft 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.owl-wing-right {
+  animation: flapRight 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes flapLeft {
+  0%, 100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
+}
+
+@keyframes flapRight {
+  0%, 100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+}
+
+/* Ear tufts wiggle */
+.owl-tuft-left {
+  animation: wiggleLeft 3s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.owl-tuft-right {
+  animation: wiggleRight 3s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes wiggleLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes wiggleRight {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Delta symbol glow */
+.logo-delta {
+  animation: deltaGlow 2s ease-in-out infinite;
+}
+
+@keyframes deltaGlow {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+  }
+}
+
+/* Floating particles */
+.particle {
+  animation: float 3s ease-in-out infinite;
+}
+
+.particle-1 {
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+
+.particle-2 {
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+}
+
+.particle-3 {
+  animation-delay: 1s;
+  animation-duration: 4s;
+}
+
+.particle-4 {
+  animation-delay: 1.5s;
+  animation-duration: 3.2s;
+}
+
+.particle-5 {
+  animation-delay: 2s;
+  animation-duration: 3.8s;
+}
+
+.particle-6 {
+  animation-delay: 2.5s;
+  animation-duration: 4.2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-5px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 0.8;
+  }
+}
+
+/* Logo text styling */
+.logo-text {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.logo-text-main {
+  background: linear-gradient(135deg, #ffffff 0%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 3s ease-in-out infinite;
+}
+
+.logo-text-delta {
+  background: linear-gradient(135deg, #ffd700 0%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.2em;
+  animation: deltaTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes deltaTextGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-logo {
+    max-width: 200px;
+  }
+  
+  .logo-text {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-logo-container,
+  .logo-glow,
+  .logo-ring,
+  .owl-body,
+  .owl-eyes,
+  .eye-pupil,
+  .owl-wing-left,
+  .owl-wing-right,
+  .owl-tuft-left,
+  .owl-tuft-right,
+  .logo-delta,
+  .particle,
+  .logo-text-main,
+  .logo-text-delta {
+    animation: none !important;
+  }
+}

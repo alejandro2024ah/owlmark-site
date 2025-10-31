@@ -1,0 +1,187 @@
+/* FloatingElements.css - Animated floating decorative elements */
+
+.floating-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Base floating shape styles */
+.floating-shape {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+/* Individual shape positioning and animations */
+.shape-1 {
+  top: 15%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation: float 12s ease-in-out infinite, rotate 20s linear infinite;
+}
+
+.shape-2 {
+  top: 25%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  animation: float 10s ease-in-out infinite 1s, rotate 15s linear infinite reverse;
+}
+
+.shape-3 {
+  bottom: 20%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  animation: float 11s ease-in-out infinite 2s, rotate 18s linear infinite;
+}
+
+.shape-4 {
+  top: 40%;
+  left: 8%;
+  width: 50px;
+  height: 50px;
+  animation: float 9s ease-in-out infinite 1.5s, rotate 22s linear infinite reverse;
+}
+
+.shape-5 {
+  bottom: 30%;
+  right: 10%;
+  width: 55px;
+  height: 55px;
+  animation: float 10s ease-in-out infinite 3s, rotate 16s linear infinite;
+}
+
+.shape-6 {
+  top: 60%;
+  right: 20%;
+  width: 65px;
+  height: 65px;
+  animation: float 13s ease-in-out infinite 2.5s, rotate 19s linear infinite reverse;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateY(-30px) translateX(15px) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50px) translateX(-10px) scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-30px) translateX(20px) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+/* Rotation animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: sparkle 3s ease-in-out infinite;
+  opacity: 0;
+}
+
+.sparkle-1 {
+  top: 20%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: 50%;
+  right: 25%;
+  animation-delay: 1s;
+  font-size: 1.2rem;
+}
+
+.sparkle-3 {
+  bottom: 25%;
+  left: 30%;
+  animation-delay: 2s;
+  font-size: 1.8rem;
+}
+
+.sparkle-4 {
+  top: 35%;
+  right: 35%;
+  animation-delay: 1.5s;
+  font-size: 1.3rem;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-shape {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .shape-1 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .shape-2 {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .sparkle {
+    font-size: 1rem;
+  }
+  
+  .sparkle-3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Hide on mobile to improve performance */
+@media (max-width: 480px) {
+  .floating-shape,
+  .sparkle {
+    display: none;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .floating-shape,
+  .sparkle {
+    animation: none !important;
+    opacity: 0.3;
+  }
+}
