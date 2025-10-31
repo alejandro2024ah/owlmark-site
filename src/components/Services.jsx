@@ -1,4 +1,5 @@
 import React from "react";
+import ServiceCard from "./ServiceCard";
 
 const services = [
   {
@@ -43,11 +44,13 @@ export default function Services() {
         </div>
         <div className="grid grid-3">
           {services.map((service, index) => (
-            <div key={index} className="card">
-              <div className="card-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
+            <ServiceCard
+              key={index}
+              index={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
           ))}
         </div>
       </div>
