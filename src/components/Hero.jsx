@@ -1,27 +1,35 @@
 // Hero.jsx
 import React from "react";
-import AnimatedLogo from "./AnimatedLogo";
-import FloatingElements from "./FloatingElements";
 import heroBg from "../assets/hero.jpg";
 
 export default function Hero() {
   return (
-    <section id="top" className="hero" aria-labelledby="hero-title">
+    <section id="top" className="hero hero-video" aria-labelledby="hero-title">
       <div className="hero-bg-wrapper">
+        {/* Video background - falls back to static image if video not available */}
+        <video 
+          className="hero-video-bg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={heroBg}
+        >
+          <source src="/assets/hero.mp4" type="video/mp4" />
+          {/* Fallback to image if video fails */}
+        </video>
         <img 
           src={heroBg} 
           alt="Beautiful mountain landscape representing growth and success" 
-          className="hero-bg" 
+          className="hero-bg hero-bg-fallback" 
           loading="eager" 
           fetchpriority="high" 
         />
         <div className="hero-overlay"></div>
-        <FloatingElements />
       </div>
 
       <div className="hero-content">
-        <AnimatedLogo />
-        <h1 id="hero-title" className="sr-only">OWLmΔrk</h1>
+        <h1 id="hero-title" className="hero-title">OWLmΔrk</h1>
         <p className="hero-subtitle">
           Elevate your brand with strategic marketing solutions that drive real results
         </p>
