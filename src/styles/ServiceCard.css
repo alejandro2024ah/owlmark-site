@@ -193,7 +193,10 @@
   .service-icon,
   .icon-particle {
     animation: none !important;
-    transition: none !important;
+  }
+  
+  .service-card {
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
   }
   
   .service-card.hovered {

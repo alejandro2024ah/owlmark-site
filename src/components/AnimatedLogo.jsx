@@ -1,19 +1,8 @@
 // AnimatedLogo.jsx - Animated video-like logo component
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/AnimatedLogo.css";
 
 export default function AnimatedLogo({ className = "" }) {
-  const [isAnimating, setIsAnimating] = useState(true);
-
-  useEffect(() => {
-    // Create a continuous animation loop
-    const timer = setInterval(() => {
-      setIsAnimating(prev => !prev);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className={`animated-logo-container ${className}`}>
       <svg
